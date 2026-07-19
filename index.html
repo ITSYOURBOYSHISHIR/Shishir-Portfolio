@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shishir Chandra Poudel — Business IT professional, creative strategist, and idea partner based in Melbourne.">
+  <title>Shishir Chandra Poudel — Business IT & Strategy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fafafa;
+      --grid:#ececec;
+      --surface:#ffffff;
+      --ink:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --accent:#0f766e;
+      --accent-soft:#ecfdf5;
+      --shadow:0 8px 30px rgba(17,24,39,.06);
+      --nav-shadow:0 4px 24px rgba(17,24,39,.08);
+      --photo-glow:0 0 0 6px rgba(15,118,110,.12), 0 16px 40px rgba(15,118,110,.18);
+    }
+    [data-theme="dark"]{
+      --bg:#0b0f14;
+      --grid:#151b24;
+      --surface:#121820;
+      --ink:#f3f4f6;
+      --muted:#9ca3af;
+      --line:#1f2937;
+      --accent:#2dd4bf;
+      --accent-soft:#042f2e;
+      --shadow:0 8px 30px rgba(0,0,0,.35);
+      --nav-shadow:0 4px 24px rgba(0,0,0,.4);
+      --photo-glow:0 0 0 6px rgba(45,212,191,.15), 0 16px 40px rgba(0,0,0,.45);
+    }
+    *,*::before,*::after{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family:Inter, system-ui, sans-serif;
+      font-size:16px;
+      line-height:1.7;
+      color:var(--ink);
+      background-color:var(--bg);
+      background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size:32px 32px;
+    }
+    h1,h2,h3{
+      font-family:"Playfair Display", Georgia, serif;
+      line-height:1.2;
+      margin:0;
+      font-weight:700;
+    }
+    a{ color:var(--accent); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    .wrap{
+      width:min(720px, calc(100% - 32px));
+      margin-inline:auto;
+    }
+
+    .top-nav{
+      position:fixed;
+      top:18px;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:50;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 10px 8px 16px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:999px;
+      box-shadow:var(--nav-shadow);
+      max-width:calc(100% - 24px);
+    }
+    .top-nav .logo{
+      font-weight:700;
+      font-size:.95rem;
+      color:var(--accent);
+      text-decoration:none;
+      margin-right:4px;
+      white-space:nowrap;
+    }
+    .top-nav .logo:hover{ text-decoration:none; }
+    .top-nav nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:2px 14px;
+    }
+    .top-nav nav a,
+    .top-nav nav button.nav-link,
+    .top-nav nav label.nav-link{
+      font-size:.82rem;
+      font-weight:500;
+      color:var(--muted);
+      text-decoration:none;
+    }
+    .top-nav nav button.nav-link,
+    .top-nav nav label.nav-link{
+      background:none;
+      border:none;
+      cursor:pointer;
+      font-family:inherit;
+      padding:0;
+    }
+    .top-nav nav a:hover,
+    .top-nav nav button.nav-link:hover,
+    .top-nav nav label.nav-link:hover{ color:var(--ink); text-decoration:none; }
+    .theme-btn{
+      margin-left:6px;
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      border:1px solid var(--line);
+      background:var(--bg);
+      cursor:pointer;
+      font-size:.95rem;
+      line-height:1;
+      flex:none;
+    }
+
+    .hero{
+      padding:110px 0 48px;
+      text-align:center;
+    }
+    .photo-wrap{
+      display:inline-block;
+      margin-bottom:28px;
+    }
+    .photo{
+      width:148px;
+      height:148px;
+      border-radius:50%;
+      object-fit:cover;
+      object-position:center 12%;
+      box-shadow:var(--photo-glow);
+      border:4px solid var(--surface);
+      background:var(--line);
+    }
+    .hero h1{
+      font-size:clamp(1.85rem, 5.5vw, 2.6rem);
+      margin-bottom:10px;
+      letter-spacing:-.02em;
+    }
+    .hero .role{
+      font-size:1rem;
+      color:var(--muted);
+      font-weight:500;
+      margin-bottom:18px;
+    }
+    .hero .tagline{
+      max-width:34em;
+      margin:0 auto 22px;
+      color:var(--muted);
+      font-size:.98rem;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 20px;
+      border-radius:999px;
+      font-size:.88rem;
+      font-weight:600;
+      text-decoration:none;
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--ink);
+      box-shadow:var(--shadow);
+    }
+    .btn-primary{
+      background:var(--accent);
+      border-color:var(--accent);
+      color:#fff;
+    }
+    .btn:hover{ text-decoration:none; transform:translateY(-1px); }
+    label.btn{ cursor:pointer; }
+
+    section{
+      padding:56px 0;
+    }
+    section h2{
+      font-size:clamp(1.45rem, 4vw, 1.85rem);
+      text-align:center;
+      margin-bottom:28px;
+    }
+    .about-text{
+      text-align:center;
+      color:var(--muted);
+      font-size:.98rem;
+    }
+    .about-text p{ margin:0 0 16px; }
+    .about-text strong{ color:var(--ink); font-weight:600; }
+
+    .strength-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:16px;
+    }
+    .strength{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:22px 20px;
+      box-shadow:var(--shadow);
+    }
+    .strength-icon{
+      font-size:1.4rem;
+      margin-bottom:10px;
+    }
+    .strength h3{
+      font-family:Inter, sans-serif;
+      font-size:1rem;
+      font-weight:700;
+      margin-bottom:8px;
+    }
+    .strength p{
+      margin:0;
+      font-size:.9rem;
+      color:var(--muted);
+      line-height:1.55;
+    }
+
+    .journey-list{
+      display:grid;
+      gap:14px;
+    }
+    .journey-item{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:20px 22px;
+      box-shadow:var(--shadow);
+    }
+    .journey-item h3{
+      font-family:Inter, sans-serif;
+      font-size:1rem;
+      font-weight:700;
+      margin-bottom:4px;
+    }
+    .journey-item .meta{
+      font-size:.84rem;
+      color:var(--accent);
+      font-weight:600;
+      margin-bottom:8px;
+    }
+    .journey-item p{
+      margin:0;
+      font-size:.92rem;
+      color:var(--muted);
+    }
+
+    .work-grid{
+      display:grid;
+      gap:14px;
+    }
+    .work-card{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+    .work-card .label{
+      display:inline-block;
+      font-size:.72rem;
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:var(--accent);
+      background:var(--accent-soft);
+      padding:4px 10px;
+      border-radius:999px;
+      margin-bottom:10px;
+    }
+    .work-card .label.live{ color:#4338ca; background:#eef2ff; }
+    [data-theme="dark"] .work-card .label.live{ color:#a5b4fc; background:#1e1b4b; }
+    .work-card h3{
+      font-family:Inter, sans-serif;
+      font-size:1.05rem;
+      font-weight:700;
+      margin-bottom:8px;
+    }
+    .work-card p{
+      margin:0 0 12px;
+      font-size:.92rem;
+      color:var(--muted);
+    }
+    .work-card a{
+      font-size:.88rem;
+      font-weight:600;
+    }
+
+    .contact-box{
+      text-align:center;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:36px 28px;
+      box-shadow:var(--shadow);
+    }
+    .contact-box h2{ margin-bottom:12px; }
+    .contact-box p{
+      color:var(--muted);
+      margin:0 0 22px;
+      font-size:.95rem;
+    }
+    .contact-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px;
+    }
+
+    footer{
+      text-align:center;
+      padding:32px 0 48px;
+      font-size:.82rem;
+      color:var(--muted);
+    }
+
+    .resume-open{
+      position:absolute;
+      width:1px;
+      height:1px;
+      opacity:0;
+      pointer-events:none;
+    }
+    #resume-modal{
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:100;
+      background:rgba(17,24,39,.6);
+      overflow-y:auto;
+      padding:72px 16px 24px;
+    }
+    .resume-open:checked ~ #resume-modal{ display:block; }
+    #resume-modal .resume-sheet{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:28px 32px 36px;
+      box-shadow:var(--shadow);
+      font-size:.92rem;
+      line-height:1.55;
+      max-width:780px;
+      margin:0 auto;
+    }
+    #resume-modal .resume-toolbar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:18px;
+      align-items:center;
+    }
+    #resume-modal .resume-toolbar a,
+    #resume-modal .resume-toolbar button,
+    #resume-modal .resume-toolbar label,
+    #resume-modal .resume-toolbar .resume-print{
+      font:inherit;
+      font-size:.82rem;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--bg);
+      cursor:pointer;
+      text-decoration:none;
+      color:var(--ink);
+    }
+    #resume-modal .resume-toolbar button,
+    #resume-modal .resume-toolbar .resume-print{
+      background:var(--accent);
+      color:#fff;
+      border-color:var(--accent);
+    }
+    #resume-modal .resume-head{
+      display:flex;
+      gap:22px;
+      align-items:center;
+      border-bottom:2px solid var(--ink);
+      padding-bottom:18px;
+      margin-bottom:18px;
+    }
+    #resume-modal .resume-photo{
+      width:92px;
+      height:92px;
+      border-radius:50%;
+      object-fit:cover;
+      flex:none;
+      border:2px solid var(--line);
+    }
+    #resume-modal .resume-head h2{
+      font-size:1.55rem;
+      text-align:left;
+      margin-bottom:4px;
+    }
+    #resume-modal .resume-subtitle{
+      font-size:.92rem;
+      color:var(--accent);
+      font-weight:600;
+      margin-bottom:8px;
+    }
+    #resume-modal .resume-contact{
+      display:flex;
+      flex-wrap:wrap;
+      gap:4px 14px;
+      font-size:.82rem;
+      color:var(--muted);
+    }
+    #resume-modal .resume-block h3{
+      font-family:Inter, sans-serif;
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:var(--accent);
+      border-bottom:1px solid var(--line);
+      padding-bottom:4px;
+      margin:16px 0 8px;
+      text-align:left;
+    }
+    #resume-modal .resume-block p,
+    #resume-modal .resume-block li{
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+    #resume-modal .resume-block ul{
+      margin:0 0 0 1.1em;
+    }
+    #resume-modal .job{ margin-bottom:12px; }
+    #resume-modal .job-head{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:4px 12px;
+      margin-bottom:4px;
+    }
+    #resume-modal .job-head strong{ color:var(--ink); }
+    #resume-modal .job-head span{ font-size:.84rem; color:var(--muted); }
+    #resume-modal .highlight-box{
+      background:var(--accent-soft);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:12px 14px;
+      font-size:.88rem;
+      color:var(--muted);
+    }
+    #resume-modal .highlight-box strong{ color:var(--ink); }
+    #resume-modal .skills-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:6px 20px;
+      font-size:.88rem;
+      color:var(--muted);
+    }
+    #resume-modal .skills-grid strong{ color:var(--ink); }
+
+    @media print{
+      header, main, footer{ display:none !important; }
+      .resume-open:not(:checked) ~ #resume-modal{ display:none !important; }
+      .resume-open:checked ~ #resume-modal{
+        display:block !important;
+        position:static;
+        background:none;
+        padding:0;
+      }
+      #resume-modal .resume-sheet{ border:none; box-shadow:none; padding:0; }
+      #resume-modal .resume-toolbar{ display:none !important; }
+      #resume-modal a{ color:inherit; text-decoration:none; }
+    }
+
+    @media (max-width:640px){
+      .top-nav nav{ display:none; }
+      .strength-grid{ grid-template-columns:1fr; }
+      .hero{ padding-top:96px; }
+      .photo{ width:128px; height:128px; }
+      #resume-modal .resume-head{ flex-direction:column; text-align:center; }
+      #resume-modal .skills-grid{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top-nav">
+    <a class="logo" href="#top">Shishir</a>
+    <nav aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#strengths">Strengths</a>
+      <a href="#journey">Journey</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+      <label for="resume-open" class="nav-link">Resume</label>
+    </nav>
+    <button type="button" class="theme-btn" id="theme-toggle" aria-label="Toggle dark mode">☀</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="photo-wrap">
+          <img class="photo" src="assets/profile.png" alt="Shishir Chandra Poudel" width="148" height="148"
+               onerror="this.onerror=null;this.src='assets/profile.svg';">
+        </div>
+        <h1>Hi, I'm Shishir Chandra Poudel</h1>
+        <p class="role">Business IT Professional · Creative Strategist · Idea Partner</p>
+        <p class="tagline">
+          I connect people, systems, and business ideas — helping ventures think clearly,
+          plan smarter, and use technology as a tool, not the whole story.
+        </p>
+        <div class="hero-actions">
+          <label for="resume-open" class="btn btn-primary">View resume</label>
+          <a class="btn" href="#contact">Let's talk</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <h2>About Me</h2>
+        <div class="about-text">
+          <p>
+            I'm a <strong>creative thinker</strong> based in Melbourne, with roots in Nepal.
+            My strength isn't writing code for its own sake — it's seeing how a business works,
+            where it gets stuck, and what could work better tomorrow.
+          </p>
+          <p>
+            I generate ideas quickly — often many in a single day. If you bring me a business concept,
+            I'll listen carefully, analyse the gaps, and come back with honest feedback plus practical
+            strategies to move forward. I'm a strong <strong>observer</strong>: I notice what others
+            overlook in operations, customer experience, and day-to-day IT friction.
+          </p>
+          <p>
+            By day I support real businesses through <strong>Dingo IT Solutions</strong> — retail stores,
+            disability clients, and teams that need systems that simply work. I've also helped companies
+            in Nepal go digital with clearer web presence and smoother client communication.
+          </p>
+          <p>
+            Permanently from Nepal · currently building my career in Melbourne, Australia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="strengths">
+      <div class="wrap">
+        <h2>What I Bring</h2>
+        <div class="strength-grid">
+          <article class="strength">
+            <div class="strength-icon" aria-hidden="true">💡</div>
+            <h3>Idea generation</h3>
+            <p>Rapid brainstorming — product angles, service models, and growth paths. I think in options, not dead ends.</p>
+          </article>
+          <article class="strength">
+            <div class="strength-icon" aria-hidden="true">🎯</div>
+            <h3>Business feedback</h3>
+            <p>I listen first, then analyse. You get clear feedback on feasibility, risks, and next steps — not vague encouragement.</p>
+          </article>
+          <article class="strength">
+            <div class="strength-icon" aria-hidden="true">👁</div>
+            <h3>Sharp observation</h3>
+            <p>I spot inefficiencies in workflows, customer journeys, and tech setups — the small things that cost big over time.</p>
+          </article>
+          <article class="strength">
+            <div class="strength-icon" aria-hidden="true">🛠</div>
+            <h3>Business IT delivery</h3>
+            <p>EPOS rollouts, CCTV, client support, accessibility, and secure systems — IT that serves the business, not the other way around.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey">
+      <div class="wrap">
+        <h2>My Journey</h2>
+        <div class="journey-list">
+          <article class="journey-item">
+            <h3>IT Support Engineer</h3>
+            <div class="meta">Dingo IT Solutions · Melbourne · Jun 2022 — Present</div>
+            <p>Lead field deployments and ongoing support for retail and disability-sector clients — systems, surveillance, accessibility, and reliable day-to-day operations.</p>
+          </article>
+          <article class="journey-item">
+            <h3>Junior WordPress Developer</h3>
+            <div class="meta">VPIT · Kathmandu · Nov 2018 — Jul 2019</div>
+            <p>Promoted within a month; delivered client-facing web projects and learned how digital presence supports real business goals.</p>
+          </article>
+          <article class="journey-item">
+            <h3>People's Officer</h3>
+            <div class="meta">Sprout Technology · Kathmandu · Feb 2017 — Oct 2018</div>
+            <p>Led a team of 7, improved collaboration by 20%, and sharpened my eye for how teams and processes actually perform.</p>
+          </article>
+          <article class="journey-item">
+            <h3>Networking</h3>
+            <div class="meta">Melbourne Institute of Technology · 2021</div>
+            <p>Built foundation in networks, infrastructure, and how modern businesses stay connected and secure.</p>
+          </article>
+          <article class="journey-item">
+            <h3>B.E. Computer Engineering</h3>
+            <div class="meta">Kantipur Engineering College · Kathmandu · 2018</div>
+            <p>Engineering mindset with a growing focus on business application — not just building, but understanding why.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <h2>Work & Ventures</h2>
+        <div class="work-grid">
+          <article class="work-card">
+            <span class="label live">Live</span>
+            <h3>Build Engineering</h3>
+            <p>Business website for a Pokhara engineering firm — services, valuation requests, partners, and mobile-ready client access.</p>
+            <a href="https://buildengineering.com.np" target="_blank" rel="noopener">buildengineering.com.np →</a>
+          </article>
+          <article class="work-card">
+            <span class="label live">Live</span>
+            <h3>Dingo IT Solutions</h3>
+            <p>Corporate presence for a Melbourne IT provider — clear service positioning for retail and disability support clients.</p>
+            <a href="https://www.dingoitsolutions.com.au" target="_blank" rel="noopener">dingoitsolutions.com.au →</a>
+          </article>
+          <article class="work-card">
+            <span class="label">Building</span>
+            <h3>TechMate Care</h3>
+            <p>In-home IT support platform for aged care and disability — connecting clients, technicians, and coordinators with simple, accessible tools.</p>
+          </article>
+          <article class="work-card">
+            <span class="label">Building</span>
+            <h3>Digital Loyalty Stamp Card</h3>
+            <p>Replacing paper punch cards with a phone-based loyalty system — easier for customers, trackable for local businesses.</p>
+          </article>
+          <article class="work-card">
+            <span class="label">Building</span>
+            <h3>Lost & Found — Reward Platform</h3>
+            <p>Community platform that rewards people for returning lost items — turning honesty into a visible, trusted habit.</p>
+          </article>
+          <article class="work-card">
+            <span class="label">Building</span>
+            <h3>Global Exam Prep LMS</h3>
+            <p>Learning platform for students worldwide to prepare for exams with structured content — built for scale, not one local syllabus.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-box">
+          <h2>Let's Collaborate</h2>
+          <p>Have a business idea, an IT challenge, or want a honest second opinion? I'd love to hear it.</p>
+          <div class="contact-links">
+            <a class="btn btn-primary" href="mailto:itsolutions.dingo@gmail.com">Email me</a>
+            <a class="btn" href="https://www.linkedin.com/in/shishir-chandra-poudel/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="tel:+61416206568">0416 206 568</a>
+            <label for="resume-open" class="btn">Resume</label>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year"></span> Shishir Chandra Poudel · shishirchandrapoudel.com.np</p>
+    </div>
+  </footer>
+
+  <input type="checkbox" id="resume-open" class="resume-open" aria-hidden="true">
+
+  <div id="resume-modal" role="dialog" aria-labelledby="resume-title">
+    <div class="resume-sheet">
+      <div class="resume-toolbar">
+        <span class="resume-print">Print: Cmd+P / Ctrl+P</span>
+        <label for="resume-open">Close</label>
+      </div>
+
+      <header class="resume-head">
+        <img class="resume-photo" src="assets/profile.png" alt="Shishir Chandra Poudel"
+             onerror="this.onerror=null;this.src='assets/profile.svg';">
+        <div>
+          <h2 id="resume-title">Shishir Chandra Poudel</h2>
+          <p class="resume-subtitle">Business IT Professional · Creative Strategist · Idea Partner</p>
+          <div class="resume-contact">
+            <span>Melbourne, VIC, Australia</span>
+            <a href="mailto:itsolutions.dingo@gmail.com">itsolutions.dingo@gmail.com</a>
+            <span>0416 206 568</span>
+            <a href="https://www.linkedin.com/in/shishir-chandra-poudel/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://shishirchandrapoudel.com.np">shishirchandrapoudel.com.np</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="resume-block">
+        <h3>Professional Summary</h3>
+        <p>
+          Creative, observant IT professional who bridges business needs and technology. Known for rapid idea
+          generation, honest business feedback, and practical strategies — not just technical fixes. Experienced
+          in retail IT deployments, disability-sector support, team leadership, and helping organisations improve
+          how they operate, communicate, and serve clients. Seeking roles where business thinking, client trust,
+          and reliable IT delivery matter.
+        </p>
+        <div class="highlight-box">
+          <strong>Core strengths:</strong> Brainstorming &amp; idea generation · Business idea analysis &amp; feedback ·
+          Operational observation · IT systems for real businesses · Client communication · Team mentoring
+        </div>
+      </div>
+
+      <div class="resume-block">
+        <h3>Experience</h3>
+        <article class="job">
+          <div class="job-head">
+            <strong>IT Support Engineer</strong>
+            <span>Jun 2022 — Present · Melbourne, VIC</span>
+          </div>
+          <div class="job-head" style="margin-bottom:6px;"><span><em>Dingo IT Solutions</em></span></div>
+          <ul>
+            <li>Deployed computers, EPOS, and printers across 5 convenience stores within a 2-day rollout — minimising downtime and revenue loss.</li>
+            <li>Implemented CCTV systems for security and operational oversight across the same store network.</li>
+            <li>Support 25+ disability clients with tailored IT and accessibility solutions — listening first, then solving.</li>
+            <li>Advise on day-to-day technology decisions that affect how the business runs, not just how devices work.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <div class="job-head">
+            <strong>Junior WordPress Developer</strong>
+            <span>Nov 2018 — Jul 2019 · Kathmandu, Nepal</span>
+          </div>
+          <div class="job-head" style="margin-bottom:6px;"><span><em>VPIT</em></span></div>
+          <ul>
+            <li>Promoted from intern to frontend role in one month; earned 30% pay increase after strong project delivery.</li>
+            <li>Delivered 8 client web projects — translating business requirements into clear digital presence.</li>
+            <li>Weekly client communication: understanding goals, managing expectations, and closing feedback loops.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <div class="job-head">
+            <strong>People's Officer</strong>
+            <span>Feb 2017 — Oct 2018 · Kathmandu, Nepal</span>
+          </div>
+          <div class="job-head" style="margin-bottom:6px;"><span><em>Sprout Technology</em></span></div>
+          <ul>
+            <li>Led and mentored a team of 7 on data collection and analysis projects.</li>
+            <li>Raised team productivity by 20% through better collaboration and structured workflows.</li>
+            <li>Reduced project completion time by 2 weeks through sharper planning and observation of bottlenecks.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="resume-block">
+        <h3>Ventures &amp; Business Projects</h3>
+        <ul>
+          <li><strong>Build Engineering</strong> (buildengineering.com.np) — Digital presence for an engineering consultancy: lead generation, service clarity, and partner trust online.</li>
+          <li><strong>Dingo IT Solutions</strong> (dingoitsolutions.com.au) — Corporate website positioning IT support for retail and disability-sector markets.</li>
+          <li><strong>TechMate Care</strong> (in development) — Service platform connecting aged-care and disability clients with in-home IT technicians.</li>
+          <li><strong>Digital Loyalty Stamp Card</strong> (in development) — Business tool replacing paper loyalty cards with trackable digital rewards.</li>
+          <li><strong>Lost &amp; Found Platform</strong> (in development) — Community model rewarding honest returns of lost property.</li>
+          <li><strong>Global Exam Prep LMS</strong> (in development) — Scalable learning product for international student exam preparation.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <h3>Education</h3>
+        <div class="job">
+          <div class="job-head"><strong>Networking</strong><span>2021 · Melbourne, VIC</span></div>
+          <span>Melbourne Institute of Technology (MIT)</span>
+        </div>
+        <div class="job">
+          <div class="job-head"><strong>Bachelor, Computer Engineering</strong><span>2018 · Kathmandu, Nepal</span></div>
+          <span>Kantipur Engineering College</span>
+        </div>
+      </div>
+
+      <div class="resume-block">
+        <h3>Certifications</h3>
+        <ul>
+          <li>Microsoft Azure Fundamentals (AZ-900) Cert Prep — LinkedIn Learning, 2023</li>
+          <li>Introduction to Linux — LinkedIn Learning, 2023</li>
+          <li>CompTIA Security+ (SY0-601) — LinkedIn Learning, 2023</li>
+          <li>Vulnerability Management in Cybersecurity — LinkedIn Learning, 2023</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <h3>Skills</h3>
+        <div class="skills-grid">
+          <div><strong>Business &amp; strategy:</strong> Idea generation, venture feedback, process observation, client advisory</div>
+          <div><strong>IT operations:</strong> Windows, macOS, Linux support; EPOS; CCTV; remote support</div>
+          <div><strong>People:</strong> Team leadership, mentoring, disability-sector client relations</div>
+          <div><strong>Infrastructure:</strong> Networking (TCP/IP, DNS, DHCP), Active Directory, security basics</div>
+          <div><strong>Digital:</strong> Business websites, WordPress, client-facing online presence</div>
+          <div><strong>Mindset:</strong> Creative, fast-thinking, detail-aware, calm under pressure</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const root = document.documentElement;
+    const toggle = document.getElementById("theme-toggle");
+    const saved = localStorage.getItem("theme");
+    if (saved === "dark") {
+      root.setAttribute("data-theme", "dark");
+      toggle.textContent = "☾";
+    }
+    toggle.addEventListener("click", () => {
+      const dark = root.getAttribute("data-theme") === "dark";
+      if (dark) {
+        root.removeAttribute("data-theme");
+        toggle.textContent = "☀";
+        localStorage.setItem("theme", "light");
+      } else {
+        root.setAttribute("data-theme", "dark");
+        toggle.textContent = "☾";
+        localStorage.setItem("theme", "dark");
+      }
+    });
+
+  </script>
+</body>
+</html>

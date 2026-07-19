@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shishir Chandra Poudel — Business IT Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#111827;
+      --muted:#4b5563;
+      --accent:#0f766e;
+      --line:#e5e7eb;
+    }
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    body{
+      font-family:Inter, system-ui, sans-serif;
+      font-size:10.5pt;
+      line-height:1.5;
+      color:var(--ink);
+      background:#fff;
+      max-width:780px;
+      margin:0 auto;
+      padding:28px 32px 40px;
+    }
+    .print-bar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:14px;
+      align-items:center;
+    }
+    .print-bar a, .print-bar button{
+      font:inherit;
+      font-size:9pt;
+      padding:8px 14px;
+      border-radius:8px;
+      border:1px solid var(--line);
+      background:#f9fafb;
+      cursor:pointer;
+      text-decoration:none;
+      color:var(--ink);
+    }
+    .print-bar button{
+      background:var(--accent);
+      color:#fff;
+      border-color:var(--accent);
+    }
+    .resume-head{
+      display:flex;
+      gap:22px;
+      align-items:center;
+      border-bottom:2px solid var(--ink);
+      padding-bottom:18px;
+      margin-bottom:18px;
+    }
+    .resume-photo{
+      width:92px;
+      height:92px;
+      border-radius:50%;
+      object-fit:cover;
+      flex:none;
+      border:2px solid var(--line);
+    }
+    h1{
+      font-size:20pt;
+      letter-spacing:-.02em;
+      margin-bottom:4px;
+    }
+    .subtitle{
+      font-size:10.5pt;
+      color:var(--accent);
+      font-weight:600;
+      margin-bottom:8px;
+    }
+    .contact{
+      display:flex;
+      flex-wrap:wrap;
+      gap:4px 14px;
+      font-size:9pt;
+      color:var(--muted);
+    }
+    .contact a{ color:var(--accent); text-decoration:none; }
+    h2{
+      font-size:10pt;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:var(--accent);
+      border-bottom:1px solid var(--line);
+      padding-bottom:4px;
+      margin:16px 0 8px;
+    }
+    p{ margin-bottom:8px; color:var(--muted); }
+    .job{ margin-bottom:12px; }
+    .job-head{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:4px 12px;
+      margin-bottom:4px;
+    }
+    .job-head strong{ font-size:11pt; color:var(--ink); }
+    .job-head span{ font-size:9.5pt; color:var(--muted); }
+    ul{
+      margin:0 0 0 1.1em;
+      color:var(--muted);
+    }
+    li{ margin-bottom:3px; }
+    .skills-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:6px 20px;
+      font-size:10pt;
+      color:var(--muted);
+    }
+    .skills-grid strong{ color:var(--ink); font-weight:600; }
+    .highlight-box{
+      background:#ecfdf5;
+      border:1px solid #a7f3d0;
+      border-radius:8px;
+      padding:12px 14px;
+      margin-bottom:8px;
+      font-size:10pt;
+      color:var(--muted);
+    }
+    .highlight-box strong{ color:var(--ink); }
+    @media print{
+      .print-bar{ display:none !important; }
+      body{ padding:0; max-width:none; }
+      a{ color:inherit; text-decoration:none; }
+    }
+    @media (max-width:600px){
+      body{ padding:20px 18px; }
+      .resume-head{ flex-direction:column; text-align:center; }
+      .skills-grid{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-bar">
+    <button type="button" id="print-btn">Print / Save as PDF</button>
+    <a href="index.html">← Back to portfolio</a>
+  </div>
+
+  <header class="resume-head">
+    <img class="resume-photo" src="assets/profile.png" alt="Shishir Chandra Poudel"
+         onerror="this.onerror=null;this.src='assets/profile.svg';">
+    <div>
+      <h1>Shishir Chandra Poudel</h1>
+      <p class="subtitle">Business IT Professional · Creative Strategist · Idea Partner</p>
+      <div class="contact">
+        <span>Melbourne, VIC, Australia</span>
+        <a href="mailto:itsolutions.dingo@gmail.com">itsolutions.dingo@gmail.com</a>
+        <span>0416 206 568</span>
+        <a href="https://www.linkedin.com/in/shishir-chandra-poudel/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://shishirchandrapoudel.com.np">shishirchandrapoudel.com.np</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Professional Summary</h2>
+    <p>
+      Creative, observant IT professional who bridges business needs and technology. Known for rapid idea
+      generation, honest business feedback, and practical strategies — not just technical fixes. Experienced
+      in retail IT deployments, disability-sector support, team leadership, and helping organisations improve
+      how they operate, communicate, and serve clients. Seeking roles where business thinking, client trust,
+      and reliable IT delivery matter.
+    </p>
+    <div class="highlight-box">
+      <strong>Core strengths:</strong> Brainstorming &amp; idea generation · Business idea analysis &amp; feedback ·
+      Operational observation · IT systems for real businesses · Client communication · Team mentoring
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <article class="job">
+      <div class="job-head">
+        <strong>IT Support Engineer</strong>
+        <span>Jun 2022 — Present · Melbourne, VIC</span>
+      </div>
+      <div class="job-head" style="margin-bottom:6px;"><span><em>Dingo IT Solutions</em></span></div>
+      <ul>
+        <li>Deployed computers, EPOS, and printers across 5 convenience stores within a 2-day rollout — minimising downtime and revenue loss.</li>
+        <li>Implemented CCTV systems for security and operational oversight across the same store network.</li>
+        <li>Support 25+ disability clients with tailored IT and accessibility solutions — listening first, then solving.</li>
+        <li>Advise on day-to-day technology decisions that affect how the business runs, not just how devices work.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <strong>Junior WordPress Developer</strong>
+        <span>Nov 2018 — Jul 2019 · Kathmandu, Nepal</span>
+      </div>
+      <div class="job-head" style="margin-bottom:6px;"><span><em>VPIT</em></span></div>
+      <ul>
+        <li>Promoted from intern to frontend role in one month; earned 30% pay increase after strong project delivery.</li>
+        <li>Delivered 8 client web projects — translating business requirements into clear digital presence.</li>
+        <li>Weekly client communication: understanding goals, managing expectations, and closing feedback loops.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <strong>People's Officer</strong>
+        <span>Feb 2017 — Oct 2018 · Kathmandu, Nepal</span>
+      </div>
+      <div class="job-head" style="margin-bottom:6px;"><span><em>Sprout Technology</em></span></div>
+      <ul>
+        <li>Led and mentored a team of 7 on data collection and analysis projects.</li>
+        <li>Raised team productivity by 20% through better collaboration and structured workflows.</li>
+        <li>Reduced project completion time by 2 weeks through sharper planning and observation of bottlenecks.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section>
+    <h2>Ventures &amp; Business Projects</h2>
+    <ul>
+      <li><strong>Build Engineering</strong> (buildengineering.com.np) — Digital presence for an engineering consultancy: lead generation, service clarity, and partner trust online.</li>
+      <li><strong>Dingo IT Solutions</strong> (dingoitsolutions.com.au) — Corporate website positioning IT support for retail and disability-sector markets.</li>
+      <li><strong>TechMate Care</strong> (in development) — Service platform connecting aged-care and disability clients with in-home IT technicians.</li>
+      <li><strong>Digital Loyalty Stamp Card</strong> (in development) — Business tool replacing paper loyalty cards with trackable digital rewards.</li>
+      <li><strong>Lost &amp; Found Platform</strong> (in development) — Community model rewarding honest returns of lost property.</li>
+      <li><strong>Global Exam Prep LMS</strong> (in development) — Scalable learning product for international student exam preparation.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="job">
+      <div class="job-head"><strong>Networking</strong><span>2021 · Melbourne, VIC</span></div>
+      <span>Melbourne Institute of Technology (MIT)</span>
+    </div>
+    <div class="job">
+      <div class="job-head"><strong>Bachelor, Computer Engineering</strong><span>2018 · Kathmandu, Nepal</span></div>
+      <span>Kantipur Engineering College</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <ul>
+      <li>Microsoft Azure Fundamentals (AZ-900) Cert Prep — LinkedIn Learning, 2023</li>
+      <li>Introduction to Linux — LinkedIn Learning, 2023</li>
+      <li>CompTIA Security+ (SY0-601) — LinkedIn Learning, 2023</li>
+      <li>Vulnerability Management in Cybersecurity — LinkedIn Learning, 2023</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div><strong>Business &amp; strategy:</strong> Idea generation, venture feedback, process observation, client advisory</div>
+      <div><strong>IT operations:</strong> Windows, macOS, Linux support; EPOS; CCTV; remote support</div>
+      <div><strong>People:</strong> Team leadership, mentoring, disability-sector client relations</div>
+      <div><strong>Infrastructure:</strong> Networking (TCP/IP, DNS, DHCP), Active Directory, security basics</div>
+      <div><strong>Digital:</strong> Business websites, WordPress, client-facing online presence</div>
+      <div><strong>Mindset:</strong> Creative, fast-thinking, detail-aware, calm under pressure</div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("print-btn").addEventListener("click", function () {
+      window.print();
+    });
+  </script>
+</body>
+</html>
