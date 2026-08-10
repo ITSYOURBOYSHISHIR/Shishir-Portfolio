@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shishir Chandra Poudel — Business Analyst Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#111827;
+      --muted:#4b5563;
+      --accent:#0f766e;
+      --line:#e5e7eb;
+    }
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    body{
+      font-family:Inter, system-ui, sans-serif;
+      font-size:10.5pt;
+      line-height:1.5;
+      color:var(--ink);
+      background:#fff;
+      max-width:780px;
+      margin:0 auto;
+      padding:28px 32px 40px;
+    }
+    .print-bar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:14px;
+      align-items:center;
+    }
+    .print-bar a, .print-bar button{
+      font:inherit;
+      font-size:9pt;
+      padding:8px 14px;
+      border-radius:8px;
+      border:1px solid var(--line);
+      background:#f9fafb;
+      cursor:pointer;
+      text-decoration:none;
+      color:var(--ink);
+    }
+    .print-bar button{
+      background:var(--accent);
+      color:#fff;
+      border-color:var(--accent);
+    }
+    .resume-head{
+      display:flex;
+      gap:22px;
+      align-items:center;
+      border-bottom:2px solid var(--ink);
+      padding-bottom:18px;
+      margin-bottom:18px;
+    }
+    .resume-photo{
+      width:92px;
+      height:92px;
+      border-radius:50%;
+      object-fit:cover;
+      flex:none;
+      border:2px solid var(--line);
+    }
+    h1{
+      font-size:20pt;
+      letter-spacing:-.02em;
+      margin-bottom:4px;
+    }
+    .subtitle{
+      font-size:10.5pt;
+      color:var(--accent);
+      font-weight:600;
+      margin-bottom:8px;
+    }
+    .contact{
+      display:flex;
+      flex-wrap:wrap;
+      gap:4px 14px;
+      font-size:9pt;
+      color:var(--muted);
+    }
+    .contact a{ color:var(--accent); text-decoration:none; }
+    h2{
+      font-size:10pt;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:var(--accent);
+      border-bottom:1px solid var(--line);
+      padding-bottom:4px;
+      margin:16px 0 8px;
+    }
+    p{ margin-bottom:8px; color:var(--muted); }
+    .job{ margin-bottom:12px; }
+    .job-head{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:4px 12px;
+      margin-bottom:4px;
+    }
+    .job-head strong{ font-size:11pt; color:var(--ink); }
+    .job-head span{ font-size:9.5pt; color:var(--muted); }
+    ul{
+      margin:0 0 0 1.1em;
+      color:var(--muted);
+    }
+    li{ margin-bottom:3px; }
+    .skills-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:6px 20px;
+      font-size:10pt;
+      color:var(--muted);
+    }
+    .skills-grid strong{ color:var(--ink); font-weight:600; }
+    .highlight-box{
+      background:#ecfdf5;
+      border:1px solid #a7f3d0;
+      border-radius:8px;
+      padding:12px 14px;
+      margin-bottom:8px;
+      font-size:10pt;
+      color:var(--muted);
+    }
+    .highlight-box strong{ color:var(--ink); }
+    @media print{
+      .print-bar{ display:none !important; }
+      body{ padding:0; max-width:none; }
+      a{ color:inherit; text-decoration:none; }
+    }
+    @media (max-width:600px){
+      body{ padding:20px 18px; }
+      .resume-head{ flex-direction:column; text-align:center; }
+      .skills-grid{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-bar">
+    <button type="button" id="print-btn">Print / Save as PDF</button>
+    <a href="index.html">← Back to portfolio</a>
+  </div>
+
+  <header class="resume-head">
+    <img class="resume-photo" src="assets/profile.png" alt="Shishir Chandra Poudel"
+         onerror="this.onerror=null;this.src='assets/profile.svg';">
+    <div>
+      <h1>Shishir Chandra Poudel</h1>
+      <p class="subtitle">Business Analyst · Product Manager · Operations Leader</p>
+      <div class="contact">
+        <span>Melbourne, VIC, Australia</span>
+        <a href="mailto:itsolutions.dingo@gmail.com">itsolutions.dingo@gmail.com</a>
+        <span>0416 206 568</span>
+        <a href="https://www.linkedin.com/in/shishir-chandra-poudel/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://shishirchandrapoudel.com.np">shishirchandrapoudel.com.np</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Professional Summary</h2>
+    <p>
+      Natural communicator and business analyst who turns observation into growth. Five years managing
+      five Melbourne retail sites — blending sales, inventory, marketing, and product decisions.
+      Grew weekly store revenue from ~$15K to ~$30K. Currently building a student–MARA agent platform,
+      TechMate Care, and a digital loyalty app — meeting agents, lawyers (including Nepali-speaking lawyers),
+      investors, and retail &amp; hospitality business owners to validate products and explore partnerships.
+      I brainstorm ventures, stress-test risks, research deeply, and map how businesses work end to end.
+      Seeking Business Analyst, Product Manager, or operations-strategy roles where listening, analysis,
+      and practical thinking drive better outcomes.
+    </p>
+    <div class="highlight-box">
+      <strong>Core strengths:</strong> Communication &amp; de-escalation · Business &amp; product analysis ·
+      Stakeholder engagement · App &amp; platform development · Web development · Retail operations &amp; revenue growth ·
+      Digital marketing &amp; SEO · Idea generation &amp; risk planning
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <article class="job">
+      <div class="job-head">
+        <strong>Business Analyst · IT Mentor · App Developer</strong>
+        <span>Melbourne, VIC · alongside store management</span>
+      </div>
+      <div class="job-head" style="margin-bottom:6px;"><span><em>Dingo IT Solutions</em></span></div>
+      <ul>
+        <li>At Dingo IT, worked one-on-one with 25+ disability clients who found everyday tech hard — phones, email, online forms — and explained things in plain language until they could handle it themselves.</li>
+        <li><strong>TechMate Care:</strong> Built this app after seeing the same gap repeat — people needed IT help at home but didn't know who to call. Disability clients and regular customers can request a technician, track the job, and get support without the usual runaround.</li>
+        <li><strong>Digital Loyalty app:</strong> Been out meeting cafe, salon, convenience store, clothing shop, and restaurant owners — showing them how to drop paper stamp cards. Customers keep all their loyalty cards on one phone, find the store on maps, and get notified when there's a deal.</li>
+        <li>On the loyalty app, owners choose a ready-made poster template, print it for the shop, and send push campaigns to regulars — basic digital marketing built in so they don't need to hire someone extra.</li>
+        <li>Most of my recent work on the loyalty app is face-to-face — sitting with small business owners, listening to what they want, and changing features based on those conversations.</li>
+        <li><strong>Student–MARA Agent app:</strong> Building a platform where international students scroll MARA-registered migration agents, compare them, and book online — aimed at students who can't easily get into the city for meetings.</li>
+        <li>Had multiple meetings with migration lawyers on the student app, including bringing Nepali-speaking lawyers onto the platform so students can consult in their own language.</li>
+        <li>Talking to investors and other stakeholders about backing the student–MARA agent platform — walking them through the problem, the product, and what comes next.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <strong>Store Manager</strong>
+        <span>2021 — 2026 · Melbourne, VIC</span>
+      </div>
+      <div class="job-head" style="margin-bottom:6px;"><span><em>City Mart Flinders Pty Ltd</em> — 5 retail locations</span></div>
+      <ul>
+        <li>Managed five stores (convenience, bottle shop, restaurant) — sales, inventory, suppliers, staffing, and in-store technology end to end.</li>
+        <li>Grew weekly revenue from ~$15K to ~$30K through product mix, pricing, and demand analysis by location, traffic, holidays, and customer type (including backpackers).</li>
+        <li>Replaced and installed EFTPOS/POS systems across all stores — software setup, terminal rollout, and staff handover.</li>
+        <li>Installed CCTV cameras and alarm systems across every location; configured cloud storage, recording hardware, and all connected devices.</li>
+        <li>Designed logos, posters, and LED banners; built restaurant menu and curated convenience-store ranges based on local trends and foot traffic.</li>
+        <li>Led digital marketing: Google Business listings, Facebook ads, and local SEO to drive store traffic.</li>
+        <li>Negotiated with suppliers; matched product ranges to each store's location and customer profile.</li>
+        <li>Conducted a 12-month city-wide location survey; successfully opened two new stores in high-potential sites.</li>
+        <li>Handled front-to-back store operations including police matters and difficult situations — resolved conflicts through calm communication, never physical confrontation.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <strong>Junior Web Developer</strong>
+        <span>Nov 2018 — Jul 2019 · Kathmandu, Nepal</span>
+      </div>
+      <div class="job-head" style="margin-bottom:6px;"><span><em>VPIT</em></span></div>
+      <ul>
+        <li>Promoted from intern to frontend role in one month; earned 30% pay increase after strong project delivery.</li>
+        <li>Delivered 8 client web projects — translating business requirements into clear digital presence.</li>
+        <li>Weekly client communication: understanding goals, managing expectations, and closing feedback loops.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <strong>People's Officer</strong>
+        <span>Feb 2017 — Oct 2018 · Kathmandu, Nepal</span>
+      </div>
+      <div class="job-head" style="margin-bottom:6px;"><span><em>Sprout Technology</em></span></div>
+      <ul>
+        <li>Led and mentored a team of 7 on data collection and analysis projects.</li>
+        <li>Raised team productivity by 20% through better collaboration and structured workflows.</li>
+        <li>Reduced project completion time by 2 weeks through sharper planning and observation of bottlenecks.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section>
+    <h2>Ventures &amp; Business Projects</h2>
+    <ul>
+      <li><strong>Student–MARA Agent Platform</strong> (in development) — App &amp; platform connecting international students to MARA-registered migration agents; browse, compare, and consult online. Meetings with agents, agencies, lawyers (including integrating Nepali-speaking lawyers), stakeholders, and potential investors.</li>
+      <li><strong>Digital Loyalty Platform</strong> (in development) — Pitching to cafes, salons, convenience stores, clothing retailers, and restaurants. Customers collect digital loyalty cards in one app, navigate to stores easily; owners get ready-made print templates, push campaigns, customer notifications, and integrated digital marketing tools.</li>
+      <li><strong>TechMate Care</strong> (in development) — App connecting people with disability and general users to IT support technicians for in-home and remote help — built from real client work at Dingo IT Solutions.</li>
+      <li><strong>Build Engineering</strong> (buildengineering.com.np) — Digital presence for an engineering consultancy: lead generation, service clarity, and partner trust online.</li>
+      <li><strong>Dingo IT Solutions</strong> (dingoitsolutions.com.au) — Business analysis, IT mentoring, app development, and corporate web presence for retail and disability-sector markets.</li>
+      <li><strong>Lost &amp; Found Platform</strong> (in development) — Community model rewarding honest returns of lost property.</li>
+      <li><strong>Global Exam Prep LMS</strong> (in development) — Scalable learning product for international student exam preparation.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="job">
+      <div class="job-head"><strong>Networking</strong><span>2021 · Melbourne, VIC</span></div>
+      <span>Melbourne Institute of Technology (MIT)</span>
+    </div>
+    <div class="job">
+      <div class="job-head"><strong>Bachelor, Computer Engineering</strong><span>2018 · Kathmandu, Nepal</span></div>
+      <span>Kantipur Engineering College</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <ul>
+      <li>Microsoft Azure Fundamentals (AZ-900) Cert Prep — LinkedIn Learning, 2023</li>
+      <li>Introduction to Linux — LinkedIn Learning, 2023</li>
+      <li>CompTIA Security+ (SY0-601) — LinkedIn Learning, 2023</li>
+      <li>Vulnerability Management in Cybersecurity — LinkedIn Learning, 2023</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div><strong>Analysis &amp; product:</strong> Business analysis, product thinking, market research, location scouting, risk mitigation</div>
+      <div><strong>Communication:</strong> Stakeholder dialogue, active listening, conflict de-escalation, supplier negotiation, customer relations</div>
+      <div><strong>Retail operations:</strong> P&amp;L impact, inventory planning, sales strategy, multi-site management, trend-based ranging</div>
+      <div><strong>Digital &amp; product:</strong> App &amp; platform development, web development, product prototyping, business websites</div>
+      <div><strong>Stakeholders:</strong> Agent &amp; agency meetings, legal consultations, investor conversations, partnership building</div>
+      <div><strong>Mindset:</strong> Jack-of-all-trades researcher, idea generator, calm under pressure, practical problem-solver</div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("print-btn").addEventListener("click", function () {
+      window.print();
+    });
+  </script>
+</body>
+</html>
